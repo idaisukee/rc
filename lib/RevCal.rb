@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'date'
 class RevDate
   attr_reader :year, :month, :day
   # create new RevDate with given year, month, day (numeric, using revolutionary year, month, day)
