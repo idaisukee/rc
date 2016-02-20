@@ -47,6 +47,19 @@ class RevDate
     day = (1 + (days % 30)).to_i
     return RevDate.new(year, month, day)
   end
+  def past_days
+    year = self.year
+    month = self.month
+    day = self.day
+
+    past_days = 0
+    past_years = Range.new(1, year - 1)
+    past_years.each do |past_year|
+      past_days += RevDate.length(past_year)
+    end
+    past_days += 30 * (month - 1)
+    past_days += day - 1
+  end
   #return the date's symbol (associated plant, animal, or tool)
   def daySymbol
     dayNum = 30*(@month - 1) + (@day - 1)
