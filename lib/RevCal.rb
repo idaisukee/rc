@@ -85,3 +85,10 @@ class RevDate
   end
 end
 
+class RcTime
+attr_reader :date_part
+  def initialize(gc_time)
+    @gc_time = gc_time
+    @date_part = Date.new(@gc_time.year, @gc_time.month, @gc_time.day)
+  end
+end
