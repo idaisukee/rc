@@ -27,7 +27,7 @@ class RevDate
   end
   # return number of days in given revolutionary year
   def RevDate.length(year)
-    if isLeapYearInRomme(year)
+    if leapYearInRomme?(year)
       return 366
     else
       return 365
