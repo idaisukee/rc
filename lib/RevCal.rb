@@ -29,7 +29,7 @@ class RevDate
     end
   end
   # return number of days in given revolutionary year
-  def RevDate.length(year)
+  def self.length(year)
     if leapYearInRomme?(year)
       return 366
     else
@@ -37,7 +37,7 @@ class RevDate
     end
   end
   # convert the despised reactionary date of the ancien regime to our glorious rational format
-  def RevDate.fromGregorian(d)
+  def self.fromGregorian(d)
     start = Date.new(1792,9,22)
     days = d - start
     year = 1
