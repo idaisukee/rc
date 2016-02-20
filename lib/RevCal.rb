@@ -16,7 +16,7 @@ class RevDate
     s = ""
     s += @day.to_s + " " + names[@month - 1] + " " + @year.to_s
   end
-  def self.isLeapYearInRomme(year)
+  def self.leapYearInRomme?(year)
     if (year == 3 || year == 7 || year == 11 || year == 15 || year == 20)
       return true
     elsif (year > 20 && (year % 4 == 0 && (year % 100 > 0) || year % 400 == 0))
