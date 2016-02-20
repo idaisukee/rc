@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'date'
+require 'time'
 require 'yaml'
 class RevDate
   attr_reader :year, :month, :day
