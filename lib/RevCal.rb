@@ -60,6 +60,11 @@ class RevDate
     past_days += 30 * (month - 1)
     past_days += day - 1
   end
+  def to_gc
+    start = Date.new(1792,9,22)
+    past_days = self.past_days
+    gc = start + past_days
+  end
   #return the date's symbol (associated plant, animal, or tool)
   def daySymbol
     dayNum = 30*(@month - 1) + (@day - 1)
