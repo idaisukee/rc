@@ -4,12 +4,12 @@ require 'yaml'
 class RevDate
   attr_reader :year, :month, :day
 
-  NAMES_FILE = File.expand_path('~/src/rc/lib/month_names.yml')
+  NAMES_FILE = File.expand_path('../../lib/month_names.yml', __FILE__)
   File.open(NAMES_FILE) do |file|
     NAMES = YAML::load(file)
   end
 
-  SYMBOLS_FILE = File.expand_path('~/src/rc/lib/day_symbols.yml')
+  SYMBOLS_FILE = File.expand_path('../../lib/day_symbols.yml', __FILE__)
   File.open(SYMBOLS_FILE) do |file|
     SYMBOLS = YAML::load(file)
   end
