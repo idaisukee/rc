@@ -1,4 +1,5 @@
 require File.expand_path('~/src/rc/lib/RevCal.rb')
-gc_date = Date.parse(ARGV[0])
+input = STDIN.readline
+gc_date = Date.parse(input)
 rc_date = RevDate.fromGregorian(gc_date)
 print rc_date.to_a.join('.')
