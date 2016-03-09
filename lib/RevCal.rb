@@ -87,7 +87,7 @@ class RevDate
 end
 
 class RcTime
-  attr_reader :date_part, :rc_date_part, :gc_total_sec, :rc_total_sec
+  attr_reader :date_part, :rc_date_part, :gc_total_sec, :rc_total_sec, :rc_hour, :rc_min, :rc_sec
   GC_SEC_PER_DAY = 60 * 60 * 24
   RC_SEC_PER_DAY = 100 * 100 * 10
   def initialize(gc_time)
@@ -99,5 +99,9 @@ class RcTime
     @gc_total_sec = @gc_pt_time.usec.to_f / 1_000_000 + @gc_pt_time.sec + 60 * @gc_pt_time.min + 60 * 60 * @gc_pt_time.hour
     
     @rc_total_sec = @gc_total_sec * RC_SEC_PER_DAY / GC_SEC_PER_DAY
+
+    @rc_hour = (@rc_total_sec / (100 * 100)).floor
+    @rc_min = (@rc_total_sec / 100).floor - @rc_hour * 100
+    @rc_sec = (@rc_total_sec).floor - @rc_min * 100 - @rc_hour * 100 * 100
   end
 end
