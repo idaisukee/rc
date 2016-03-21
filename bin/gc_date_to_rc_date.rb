@@ -1,4 +1,4 @@
-require File.expand_path('~/src/rc/lib/RevCal.rb')
+require File.expand_path('../../lib/RevCal.rb', __FILE__)
 input = STDIN.readline
 gc_date = Date.parse(input)
 rc_date = RevDate.fromGregorian(gc_date)

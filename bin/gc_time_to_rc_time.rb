@@ -1,4 +1,4 @@
-require File.expand_path('~/src/rc/lib/RevCal.rb')
+require File.expand_path('../../lib/RevCal.rb', __FILE__)
 input = STDIN.readline
 gc_time = Time.parse(input)
 rc_time = RcTime.new(gc_time)
