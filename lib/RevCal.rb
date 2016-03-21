@@ -107,4 +107,9 @@ class RcTime
     @rc_min = (@rc_total_sec / 100).floor - @rc_hour * 100
     @rc_sec = (@rc_total_sec).floor - @rc_min * 100 - @rc_hour * 100 * 100
   end
+
+  def to_jp
+    puts "共和暦 #{@rc_year} 年 #{@rc_month} 月 #{@rc_day} 日 #{@rc_hour} 時 #{@rc_min} 分"
+  end
+
 end
