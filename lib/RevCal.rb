@@ -96,6 +96,9 @@ class RcTime
     @gc_pt_time = @gc_utc_time + 60 * 60 * 1
     @pt_date_part = Date.new(@gc_pt_time.year, @gc_pt_time.month, @gc_pt_time.day)
     @rc_date_part = RevDate.fromGregorian(@pt_date_part)
+    @rc_year = @rc_date_part.year
+    @rc_month = @rc_date_part.month
+    @rc_day = @rc_date_part.day
     @gc_total_sec = @gc_pt_time.usec.to_f / 1_000_000 + @gc_pt_time.sec + 60 * @gc_pt_time.min + 60 * 60 * @gc_pt_time.hour
     
     @rc_total_sec = @gc_total_sec * RC_SEC_PER_DAY / GC_SEC_PER_DAY
