@@ -112,4 +112,11 @@ class RcTime
     puts "共和暦 #{@rc_year} 年 #{@rc_month} 月 #{@rc_day} 日 #{@rc_hour} 時 #{@rc_min} 分"
   end
 
+  def to_decimal
+    @rc_total_day = 30 * ( @rc_month - 1 ) + @rc_day
+    @rc_min_display = sprintf('%0d', @rc_min)
+    return @rc_year.to_s + ':' + @rc_total_day.to_s + '.' + @rc_hour.to_s + @rc_min_display
+  end
+
+
 end
